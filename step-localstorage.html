@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage are client side storage like cookies</title>
+    <script>
+        addEventListener("load", init);
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", clickHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click", getUserNameHandler);
+            document.getElementsByTagName("button")[2].addEventListener("click", removeUserNameHandler);
+            document.getElementsByTagName("button")[3].addEventListener("click", vanishDataHandler);
+        }
+        function clickHandler(){
+           localStorage.setItem("user",document.getElementsByTagName("input")[0].value);
+        }
+        function getUserNameHandler(){
+            document.getElementsByTagName("output")[0].value=localStorage.getItem("user");
+        }
+        function removeUserNameHandler(){
+            localStorage.removeItem("user");
+        }
+        function vanishDataHandler(){
+            window.localStorage.clear();
+        }
+        //key is doubt ask sir.
+    </script>
+</head>
+<body>
+    <input type="text">
+    <button>Add User Name</button>
+    <br>
+    <hr>
+    <button>Get User Name</button>
+    <br>
+    <button>Remove User Name</button>
+    <br>
+    <button>Vanish Data</button>
+    <br>
+   
+    <h2>User Name is : <output></output></h2>
+</body>
+</html>
